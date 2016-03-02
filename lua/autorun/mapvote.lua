@@ -8,8 +8,13 @@ MapVoteConfigDefault = {
     AllowCurrentMap = false,
     EnableCooldown = true,
     MapsBeforeRevote = 3,
-    RTVPlayerCount = 3,
-    MapPrefixes = {"ttt_"}
+    RTVPlayerCount = 0,
+    MapPrefixes = {"ttt_"},
+	SmallMaps = {"gm_construct.bsp"},
+	MedMaps = {"gm_flatgrass.bsp"},
+	LargeMaps = {"ttt_whitehouse_b2.bsp"},
+	SmallMapSize  = 8,
+	MedMapSize = 14
     }
 --Default Config
 

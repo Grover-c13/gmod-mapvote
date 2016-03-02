@@ -1,0 +1,12 @@
+{
+	"title"		:	"MapVote with player size based filtering",
+	"type"		:	"ServerContent",
+	"tags"		:	[ "fun", "build" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*",
+		"addon.txt"
+	]
+}

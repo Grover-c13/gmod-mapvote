@@ -39,6 +39,9 @@ else
     MapVote.Config = {}
 end
 
+
+
+
 function CoolDownDoStuff()
     cooldownnum = MapVote.Config.MapsBeforeRevote or 3
 
@@ -83,6 +86,11 @@ function MapVote.Start(length, current, limit, prefix, callback)
     
     local maps = file.Find("maps/*.bsp", "GAME")
     
+	
+
+	
+	
+	
     local vote_maps = {}
     
     local amt = 0
@@ -92,6 +100,50 @@ function MapVote.Start(length, current, limit, prefix, callback)
         if(not current and game.GetMap():lower()..".bsp" == map) then continue end
         if(cooldown and table.HasValue(recentmaps, map)) then continue end
 
+
+		
+		
+			-- Map Size filters
+			local players = #player.GetAll()
+
+			-- small map check
+			if (players <= MapVote.Config.SmallMapSize) then
+			
+				if (!table.HasValue(MapVote.Config.SmallMaps, map)) then
+					continue
+				end
+				
+			else
+			
+				-- med map check
+				if (players <= MapVote.Config.MedMapSize) then
+				
+					if (!table.HasValue(MapVote.Config.MedMaps, map)) then
+						continue
+					end
+					
+				else
+				
+				
+					-- large map check
+						if (!table.HasValue(MapVote.Config.LargeMaps, map)) then
+							continue
+						end
+
+					
+					
+				end
+			end
+				
+				
+			-- end
+			
+
+			
+
+		
+	
+		
         if is_expression then
             if(string.find(map, prefix)) then -- This might work (from gamemode.txt)
                 vote_maps[#vote_maps + 1] = map:sub(1, -5)
